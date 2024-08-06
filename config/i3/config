@@ -233,8 +233,6 @@ bindsym $Mod+Control+KP_Right exec --no-startup-id ~/.config/i3/slice.sh hg
 bindsym $Mod+Control+KP_Up exec --no-startup-id ~/.config/i3/slice.sh vg
 bindsym $Mod+Control+KP_Down exec --no-startup-id ~/.config/i3/slice.sh vs
 
-bindsym $Mod+Control+r exec --no-startup-id ~/.config/i3/scatter.sh
-
 # Startup commands
 exec feh --bg-scale ~/Wallpapers/paperplane.png
 exec --no-startup-id xrandr --output DP-2 --mode 1920x1080 --rate 300.18
