@@ -31,7 +31,7 @@ cp -riv {,~/.}bash_profile
 ### Extras
 Extras include:
 - Userstyles
-- NightTab
+- NightTab theme
 - Obsidian theme
 
 To install my userstyles, install the stylus extension in your browser. Click the extensions button, then open the stylus extension. Next, click manage, and import the userstyles-nihil.json from the extra folder in this repo.
@@ -42,3 +42,5 @@ To install my Obsidian theme, run the following command from the repo folder (as
 ```bash
 cp -riv extra/Obsidian/Nihil ~/Vault/.obsidian/themes/
 ```
+
+I won't be sharing my Obsidian setup, but feel free to copy or take inspiration from the showcase video.
