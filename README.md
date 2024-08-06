@@ -11,16 +11,26 @@ My dotfiles for LFS. Codenamed nihil.
 ### Dotfiles
 NOTE: The below commands were designed for bash; they may or may not work in other shells. Additionally, the commands should be executed as the user whose dotfiles you are targetting. I.e., don't run them as root unless you want the root user to have an i3 config for some reason.
 
-First, back up your existing ~/.config:
-`mv -iv ~/.config{,.bak}`
+The below commands install the dotfiles.
+```bash
+# Backup
+mv -iv ~/.config{,.bak}
+mv -iv ~/.xinitrc{,.bak}
+mv -iv ~/.bashrc{,.bak}
+mv -iv ~/.bash_profile{,.bak}
 
-Next, clone this repository:
-`git clone https://github.com/Toxikuu/nihil.git`
+# Cloning
+git clone https://github.com/Toxikuu/nihil.git && cd nihil
 
-Enter the cloned repository, and copy the config folder to ~/.config:
-`cd nihil
-cp -riv config/* ~/.config/`
+# Installation
+cp -riv config/* ~/.config/
+cp -riv {,~/.}bashrc
+cp -riv {,~/.}bash_profile
+```
 
-Next, back up your ~/.bash*:
-`mv -iv ~/.bash{rc,_profile}{,.bak}
-mv -iv ~/.xinitrc{,.bak}`
+### Extras
+Extras include:
+- Userstyles
+- Obsidian theme
+
+
