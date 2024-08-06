@@ -1,0 +1,79 @@
+[font]
+normal = { family = "Iosevka Nerd Font" }
+size = 8.25
+
+[colors.primary]
+background = "#0f0f0f"
+foreground = "#f9f9f9"
+dim_foreground = "#d9d9d9"
+bright_foreground = "#f9f9f9"
+
+[colors.cursor]
+text = "#0f0f0f"
+cursor = "#f9f9f9"
+
+[colors.vi_mode_cursor]
+text = "#0f0f0f"
+cursor = "#607baa"
+
+[colors.search.matches]
+foreground = "#0f0f0f"
+background = "#f9f9f9"
+
+[colors.search.focused_match]
+foreground = "#0f0f0f"
+background = "#88a98c"
+
+[colors.footer_bar]
+foreground = "#0f0f0f"
+background = "#f9f9f9"
+
+[colors.hints.start]
+foreground = "#0f0f0f"
+background = "#d8d38c"
+
+[colors.hints.end]
+foreground = "#0f0f0f"
+background = "#f9f9f9"
+
+[colors.selection]
+text = "#0f0f0f"
+background = "#f9f9f9"
+
+[colors.normal]
+black = "#262626"
+red = "#b39080"
+green = "#88a98c"
+yellow = "#d8d38c"
+blue = "#607baa"
+magenta = "#b191ae"
+cyan = "#87a6b4"
+white = "#f9f9f9"
+
+[colors.bright]
+black = "#262626"
+red = "#b39080"
+green = "#88a98c"
+yellow = "#d8d38c"
+blue = "#607baa"
+magenta = "#b191ae"
+cyan = "#87a6b4"
+white = "#f9f9f9"
+
+[colors.dim]
+black = "#262626"
+red = "#b39080"
+green = "#88a98c"
+yellow = "#d8d38c"
+blue = "#607baa"
+magenta = "#b191ae"
+cyan = "#87a6b4"
+white = "#f9f9f9"
+
+[[colors.indexed_colors]]
+index = 16
+color = "#be9080"
+
+[[colors.indexed_colors]]
+index = 17
+color = "#f9f9f9"
