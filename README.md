@@ -1,5 +1,5 @@
-# nihil
-My dotfiles for LFS. Codenamed nihil.
+# Nihil
+My dotfiles for LFS. Codenamed Nihil.
 
 ## Screenshots
 ![Music](https://github.com/Toxikuu/nihil/blob/main/screenshots/1.png)
@@ -21,8 +21,13 @@ mv -iv ~/.bash_profile{,.bak}
 
 # Cloning
 git clone https://github.com/Toxikuu/nihil.git && cd nihil
+mkdir Iosevka && pushd Iosevka
+curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Iosevka.tar.xz
+tar xvf Iosevka.tar.xz && rm -v Iosevka.tar.xz
+popd
 
 # Installation
+cp -riv Iosevka /usr/share/fonts/
 cp -riv config/* ~/.config/
 cp -riv {,~/.}bashrc
 cp -riv {,~/.}bash_profile
@@ -44,3 +49,4 @@ cp -riv extra/Obsidian/Nihil ~/Vault/.obsidian/themes/
 ```
 
 I won't be sharing my Obsidian setup, but feel free to copy or take inspiration from the showcase video.
+
