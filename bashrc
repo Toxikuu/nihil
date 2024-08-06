@@ -1,6 +1,6 @@
 # Toxikuu's bashrc
 # From nihil dotfiles
-# You're probably gonna want to change these
+# You're probably gonna want to change this
 
 alias doas='sudo || doas'
 alias ls='eza --icons=always --color=always --group-directories-first -F=always --header --smart-group --mounts --octal-permissions || ls'
