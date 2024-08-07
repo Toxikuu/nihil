@@ -1,0 +1,44 @@
+set notification-error-bg       "#262626" # bg
+set notification-error-fg       "#fb4934" # bright:red
+set notification-warning-bg     "#262626" # bg
+set notification-warning-fg     "#d8d38c" # bright:yellow
+set notification-bg             "#1d2021" # bg
+set notification-fg             "#88a98c" # bright:green
+
+set completion-bg               "#0f0f0f" # bg2
+set completion-fg               "#f9f9f9" # fg
+set completion-group-bg         "#262626" # bg1
+set completion-group-fg         "#464646" # gray
+set completion-highlight-bg     "#87a6b4" # bright:blue
+set completion-highlight-fg     "#262626" # bg2
+
+# Define the color in index mode
+set index-bg                    "#0f0f0f" # bg2
+set index-fg                    "#f9f9f9" # fg
+set index-active-bg             "#87a6b4" # bright:blue
+set index-active-fg             "#262626" # bg2
+
+set inputbar-bg                 "#262626" # bg
+set inputbar-fg                 "#f9f9f9" # fg
+
+set statusbar-bg                "#0f0f0f" # bg2
+set statusbar-fg                "#f9f9f9" # fg
+
+set highlight-color             "#262626" # idk how to make this transparent lol
+set highlight-active-color      "#f9f9f9" # 
+
+set default-bg                  "#0f0f0f" # bg
+set default-fg                  "#f9f9f9" # fg
+set render-loading              true
+set render-loading-bg           "#0f0f0f" # bg
+set render-loading-fg           "#f9f9f9" # fg
+
+# Recolor book content's color
+set recolor-lightcolor          "#0f0f0f" # bg
+set render-loading-fg           "#f9f9f9" # fg
+
+# Recolor book content's color
+set recolor-lightcolor          "#0f0f0f" # bg
+set recolor-darkcolor           "#f9f9f9" # fg
+set recolor                     "true"
+set recolor-keephue             "true"    # keep original color
