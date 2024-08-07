@@ -47,6 +47,5 @@ To install my Obsidian theme, run the following command from the repo folder (as
 ```bash
 cp -riv extra/Obsidian/Nihil ~/Vault/.obsidian/themes/
 ```
-
 I won't be sharing my Obsidian setup, but feel free to copy or take inspiration from the showcase video.
 
