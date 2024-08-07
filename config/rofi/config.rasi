@@ -26,4 +26,4 @@ configuration {
     // more settings as needed...
 }
 
-@theme "~/.config/rofi/theme.rasi"
+@theme "~/.config/rofi/nihil.rasi"
