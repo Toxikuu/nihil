@@ -64,6 +64,7 @@ Most of the themes are just edits of [Catppuccin](https://catppuccin.com/ports)'
 
 Exceptions:
  - The Rofi theme is an edit of the [squared nord theme](https://github.com/newmanls/rofi-themes-collection).
+ - The Neovim theme is [NvChad](https://nvchad.com/docs/quickstart/install/) with the yoru theme.
 
 Issues:
 - The Zathura theme has an issue with selection highlights. (I don't know how to make the highlights transparent.)
