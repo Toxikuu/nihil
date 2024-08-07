@@ -62,10 +62,10 @@ I got paintedgirl.png from wallhaven. As for flowers.png, I don't remember. I di
 ### The themes
 Most of the themes are just edits of [Catppuccin](https://catppuccin.com/ports)'s various themes, with colors inspired by the color palette in Alepheia's LFS showcase.
 
-Exceptions:
+**Exceptions:**
  - The Rofi theme is an edit of the [squared nord theme](https://github.com/newmanls/rofi-themes-collection).
  - The Neovim theme is [NvChad](https://nvchad.com/docs/quickstart/install/) with the yoru theme.
 
-Issues:
+**Issues:**
 - The Zathura theme has an issue with selection highlights. (I don't know how to make the highlights transparent.)
 
