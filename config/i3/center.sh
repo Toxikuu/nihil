@@ -1,12 +1,12 @@
 #!/bin/bash
 
-screen_width=$(xdotool getdisplaygeometry | awk '{print $1}')
-screen_height=$(xdotool getdisplaygeometry | awk '{print $2}')
+sw=$(xdotool getdisplaygeometry | awk '{print $1}')
+sh=$(xdotool getdisplaygeometry | awk '{print $2}')
 
-window_width=$(xdotool getwindowgeometry --shell $(xdotool getactivewindow) | grep WIDTH | cut -d= -f2)
-window_height=$(xdotool getwindowgeometry --shell $(xdotool getactivewindow) | grep HEIGHT | cut -d= -f2)
+ww=$(xdotool getwindowgeometry --shell $(xdotool getactivewindow) | grep WIDTH | cut -d= -f2)
+wh=$(xdotool getwindowgeometry --shell $(xdotool getactivewindow) | grep HEIGHT | cut -d= -f2)
 
-new_x=$(( (screen_width / 2) - (window_width / 2) ))
-new_y=$(( (screen_height / 2) - (window_height / 2) ))
+x=$(( (sw / 2) - (ww / 2) ))
+y=$(( (sh / 2) - (wh / 2) ))
 
-xdotool getactivewindow windowmove $new_x $new_y
+xdotool getactivewindow windowmove $x $y
