@@ -25,5 +25,5 @@ green=$(tput setaf 2)
 
 # This prompt is really fucky because of the em dashes. I haven't found a fix for it :sob:
 export PS1="${green}${bold} \w ${normal}— —  "
-# export PS1="${green}${bold} \w ${normal}${bold}${normal} " # Alternate prompt
+export PS1="${green}${bold} \w ${normal}${bold}${normal}$ " # Alternate prompt
 export SUDO_PROMPT=" ${bold}[${red}#${normal}${bold}]${normal} "
