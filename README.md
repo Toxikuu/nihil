@@ -2,10 +2,10 @@
 My dotfiles for LFS. Codenamed Nihil.
 
 ## Screenshots
-![Music](https://github.com/Toxikuu/nihil/blob/main/screenshots/1.png)
-![Discord](https://github.com/Toxikuu/nihil/blob/main/screenshots/2.png)
-![Neovim](https://github.com/Toxikuu/nihil/blob/main/screenshots/3.png)
-![Browser](https://github.com/Toxikuu/nihil/blob/main/screenshots/4.png)
+![Music](https://github.com/toxikuu/nihil/blob/main/screenshots/1.png)
+![Discord](https://github.com/toxikuu/nihil/blob/main/screenshots/2.png)
+![Neovim](https://github.com/toxikuu/nihil/blob/main/screenshots/3.png)
+![Browser](https://github.com/toxikuu/nihil/blob/main/screenshots/4.png)
 
 ## Install
 ### Dotfiles
@@ -22,10 +22,10 @@ mv -iv ~/Wallpapers{,.bak}
 mv -iv ~/.bash_profile{,.bak}
 
 # Cloning
-git clone https://github.com/Toxikuu/nihil.git && cd nihil
+git clone https://github.com/toxikuu/nihil.git && cd nihil
 mkdir Iosevka && pushd Iosevka
 curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Iosevka.tar.xz
-tar xvf Iosevka.tar.xz && rm -v Iosevka.tar.xz
+tar xvf Iosevka.tar.xz && rm -v $_
 popd
 
 # Installation
