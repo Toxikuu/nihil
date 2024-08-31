@@ -31,9 +31,12 @@ popd
 # Installation
 sudo cp -riv Iosevka /usr/share/fonts/
 cp -riv config/* ~/.config/
-cp -riv {,~/.}bashrc
-cp -riv {,~/.}bash_profile
+cp -iv {,~/.}bashrc
+cp -iv {,~/.}bash_profile
 cp -riv wallpapers ~/Wallpapers
+
+# Configuration
+echo "exec i3" >> ~/.xinitrc
 ```
 
 ### Extras
@@ -54,7 +57,7 @@ I won't be sharing my Obsidian setup, but feel free to copy or take inspiration 
 
 ## Credits
 ### People
-Huge thanks to Alepheia and Zani for inspiring me to try LFS. Thank you to Zeckma for creating and helping me through the GLFS book. I'd also like to thank the maintainers of the LFS and BLFS books for making this possible, as well as the AUR maintainers whose PKGBUILDs I referenced for TLFS. Also thank you to the members of the LFS Discord for being cool people :)
+Huge thanks to Alepheia and Zani for inspiring me to try LFS. Thank you to Zeckma for creating and helping me through the GLFS book. I'd also like to thank the maintainers of the LFS{,-multilib} and BLFS books for making this possible, as well as the AUR maintainers whose PKGBUILDs I referenced for TLFS. Also thank you to the members of the LFS Discord for being cool people :)
 
 ### Wallpapers 
 I got paintedgirl.png from wallhaven. As for flowers.png, I don't remember. I did some light color grading in Photopea of the original flowers.png.
@@ -71,4 +74,3 @@ Most of the themes are just edits of [Catppuccin](https://catppuccin.com/ports)'
 
 **Issues:**
 - The Zathura theme has an issue with selection highlights. (I don't know how to make the highlights transparent.)
-
