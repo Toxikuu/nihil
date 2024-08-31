@@ -10,6 +10,7 @@ My dotfiles for LFS. Codenamed Nihil.
 ## Install
 ### Dotfiles
 NOTE: The below commands were designed for bash; they may or may not work in other shells. Additionally, the commands should be executed as the user whose dotfiles you are targetting. I.e., don't run them as root unless you want the root user to have an i3 config for some reason.
+
 NOTE: Noto fonts (emoji and cjk) are recommended but not provided.
 
 The below commands install the dotfiles.
