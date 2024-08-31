@@ -1,6 +1,4 @@
 configuration {
-    // Set the default theme
-
     // General settings
     modi: "drun,run";
     show-icons: true;
@@ -10,7 +8,7 @@ configuration {
 
     // Window settings
     location: 0;
-    width: 50; // In percent, or number of pixels
+    width: 50; 
     padding: 5;
     yoffset: 0;
     xoffset: 0;
@@ -23,7 +21,6 @@ configuration {
     // Element settings
     element-padding: 2px;
     scrollbar: true;
-    // more settings as needed...
 }
 
 @theme "~/.config/rofi/nihil.rasi"
