@@ -1,5 +1,7 @@
-# i3 config file (v4)
-#
+# Toxikuu's i3 config
+# From nihil dotfiles
+# You're probably gonna want to change this
+
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 # Colors
@@ -18,10 +20,10 @@ client.placeholder       $red        $base  $text  $secondary  $secondary
 client.background        $base
 
 # Hide title bars
-default_border pixel 1
-default_floating_border pixel 1
+default_border               pixel 1
+default_floating_border      pixel 1
 for_window [floating] border pixel 1
-for_window [tiling] border pixel 1
+for_window [tiling]   border pixel 1
 
 # Hide bar
 bar {
@@ -34,74 +36,68 @@ gaps inner 6
 set $Mod Mod4
 set $Alt Mod1
 
-bindsym $Mod+Shift+s exec --no-startup-id maim -s -u | xclip -selection clipboard -t image/png 
-bindsym $Mod+Home exec --no-startup-id maim -u | xclip -selection clipboard -t image/png 
+# Screenshot Controls
+bindsym $Mod+Shift+s      exec --no-startup-id maim -s -u | xclip -selection clipboard -t image/png 
+bindsym $Mod+Home         exec --no-startup-id maim -u | xclip -selection clipboard -t image/png 
 
 # Audio Controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # Media Controls
-bindsym $Mod+k exec --no-startup-id playerctl -l | rg '^mpd.' | head -n 1 | xargs -I {} playerctl -p {} play-pause
-bindsym $Mod+j exec --no-startup-id playerctl -l | rg '^mpd.' | head -n 1 | xargs -I {} playerctl -p {} previous
-bindsym $Mod+l exec --no-startup-id playerctl -l | rg '^mpd.' | head -n 1 | xargs -I {} playerctl -p {} next
-
-bindsym $Alt+k exec --no-startup-id playerctl -p mpv play-pause
-bindsym $Alt+j exec --no-startup-id playerctl -p mpv previous
-bindsym $Alt+l exec --no-startup-id playerctl -p mpv next
-# Pause any other media (usually the browser)
-bindsym $Mod+Control+k exec --no-startup-id playerctl play-pause
-bindsym $Mod+Control+j exec --no-startup-id playerctl previous
-bindsym $Mod+Control+l exec --no-startup-id playerctl next
+bindsym $Mod+k            exec --no-startup-id playerctl -p mpv play-pause
+bindsym $Mod+j            exec --no-startup-id playerctl -p mpv previous
+bindsym $Mod+l            exec --no-startup-id playerctl -p mpv next
+# Control any other media (usually the browser)
+bindsym $Mod+Control+k    exec --no-startup-id playerctl play-pause
+bindsym $Mod+Control+j    exec --no-startup-id playerctl previous
+bindsym $Mod+Control+l    exec --no-startup-id playerctl next
 
 # Use Mouse+$Mod to drag floating windows to their wanted position
 floating_modifier $Mod
 
-
 # Application Hotkeys
-bindsym $Mod+Return exec alacritty
-bindsym $Mod+Shift+f exec /sources/tlfs/floorp/floorp
-bindsym $Mod+Shift+v exec /sources/tlfs/vesktop-1.5.3/vesktop
-bindsym $Mod+Shift+m exec alacritty -e mpv ~/NewMusic/*
-bindsym $Mod+Shift+l exec alacritty -e ollama run llama3:8b
-bindsym $Mod+Shift+b exec alacritty -e btop
-bindsym $Mod+Shift+Return exec alacritty
-
-# Toggle polybar
-# bindsym $Mod+Shift+p exec pkill polybar || polybar
+bindsym $Mod+Return        exec alacritty
+bindsym $Mod+Shift+f       exec /sources/tlfs/floorp/floorp
+bindsym $Mod+Control+f     exec /sources/tlfs/floorp/floorp --ProfileManager
+bindsym $Mod+Shift+v       exec /sources/tlfs/vesktop-1.5.3/vesktop
+bindsym $Mod+Shift+m       exec "alacritty --class toxmus -e tm"
+bindsym $Mod+Control+m     exec "alacritty --class toxmus -e tm -p" 
+bindsym $Mod+Shift+l       exec alacritty -e ollama run llama3:8b
+bindsym $Mod+Shift+b       exec alacritty -e btop
+bindsym $Mod+Shift+Return  exec alacritty
+bindsym $Mod+Shift+w       exec --no-startup-id ~/Projects/Code/bgm/bgm.sh
+bindsym $Mod+Shift+equal   exec --no-startup-id /sources/tlfs/Meth/meth.py
 
 # Toggle picom
-bindsym $Mod+$Alt+p exec pkill picom || picom
+bindsym $Mod+$Alt+p        exec pkill picom || picom
 
 # Kill focused window
 bindsym $Mod+q kill
 
 # Launch rofi
-bindsym $Mod+Shift+d exec --no-startup-id rofi -show drun
-bindsym $Mod+Shift+w exec --no-startup-id rofi -show window
-bindsym $Alt+Shift+d exec --no-startup-id rofi -show drun
-
-# launch nerdfetch
-# bindsym $Mod+n exec --no-startup-id /home/tox/.config/scripts/nf_float.sh
+bindsym $Mod+Shift+d       exec --no-startup-id rofi -show drun
+bindsym $Mod+Control+d     exec --no-startup-id rofi -show window
+bindsym $Alt+Shift+d       exec --no-startup-id rofi -show drun
 
 # Change focus
-bindsym $Mod+Left focus left
-bindsym $Mod+Down focus down
-bindsym $Mod+Up focus up
-bindsym $Mod+Right focus right
+bindsym $Mod+Left          focus left
+bindsym $Mod+Down          focus down
+bindsym $Mod+Up            focus up
+bindsym $Mod+Right         focus right
 
 # Move focused window
-bindsym $Mod+Shift+Left move left
-bindsym $Mod+Shift+Down move down
-bindsym $Mod+Shift+Up move up
-bindsym $Mod+Shift+Right move right
+bindsym $Mod+Shift+Left    move left
+bindsym $Mod+Shift+Down    move down
+bindsym $Mod+Shift+Up      move up
+bindsym $Mod+Shift+Right   move right
 
 # Toggle fullscreen
-bindsym $Mod+f fullscreen toggle
+bindsym $Mod+f             fullscreen toggle
 
 # Toggle tiling / floating
-bindsym $Mod+space floating toggle
+bindsym $Mod+space         floating toggle
 
 # Change focus between tiling / floating windows
 bindsym $Mod+Control+space focus mode_toggle
@@ -176,69 +172,67 @@ bindsym $Mod+Shift+F9    move container to workspace $ws19
 bindsym $Mod+Shift+F10   move container to workspace $ws20
 
 # Enforce workspace organization
-for_window [class="floorp"] move container to workspace $ws2
-for_window [class="vesktop"] move container to workspace $ws1
-for_window [class="Spotify"] move container to workspace $ws6
-for_window [class="steam"] move container to workspace $ws4
-for_window [class="EverestSplash-linux"] move container to workspace $ws7
-for_window [class="Celeste"] move container to workspace $ws7
-for_window [class="EtG.x86_64"] move container to workspace $ws7
+for_window [class="floorp"]               move container to workspace $ws2
+for_window [class="vesktop"]              move container to workspace $ws1
+for_window [class="Spotify"]              move container to workspace $ws6
+for_window [class="steam"]                move container to workspace $ws4
+for_window [class="EverestSplash-linux"]  move container to workspace $ws7
+for_window [class="Celeste"]              move container to workspace $ws7
+for_window [class="EtG.x86_64"]           move container to workspace $ws7
 
 # Reload the configuration file
-bindsym $Mod+$Alt+r reload
+bindsym $Mod+$Alt+r           reload
 # Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $Mod+$Alt+c restart
+bindsym $Mod+$Alt+c           restart
 # Exit i3 (logs you out of your X session)
-bindsym $Mod+Shift+Control+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $Mod+Shift+Control+e  exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # Resizing
-bindsym $Mod+Control+Left exec --no-startup-id ~/.config/i3/resize.sh left
-bindsym $Mod+Control+Right exec --no-startup-id ~/.config/i3/resize.sh right
-bindsym $Mod+Control+Up exec --no-startup-id ~/.config/i3/resize.sh up
-bindsym $Mod+Control+Down exec --no-startup-id ~/.config/i3/resize.sh down
+bindsym $Mod+Control+Left     exec --no-startup-id ~/.config/i3/resize.sh left
+bindsym $Mod+Control+Right    exec --no-startup-id ~/.config/i3/resize.sh right
+bindsym $Mod+Control+Up       exec --no-startup-id ~/.config/i3/resize.sh up
+bindsym $Mod+Control+Down     exec --no-startup-id ~/.config/i3/resize.sh down
 
 # Floating windows
-for_window [class="meth"] floating enable
-for_window [title="nf_float"] floating enable
+for_window [class="meth"]     floating enable
+for_window [class="mpv"]      floating enable
+for_window [class="toxmus"]   floating enable, resize set 666 225
 
 # 2bwm-inspired functionality
-bindsym $Mod+Tab exec --no-startup-id ~/.config/i3/cycle.sh
+bindsym $Mod+Tab              exec --no-startup-id ~/.config/i3/cycle.sh
 
-bindsym $Mod+mod2+KP_5 exec --no-startup-id ~/.config/i3/center.sh
-bindsym $Mod+KP_Begin exec --no-startup-id ~/.config/i3/center.sh
+bindsym $Mod+mod2+KP_5        exec --no-startup-id ~/.config/i3/center.sh
+bindsym $Mod+KP_Begin         exec --no-startup-id ~/.config/i3/center.sh
 
-bindsym $Mod+KP_Home exec --no-startup-id ~/.config/i3/tp.sh tl
-bindsym $Mod+mod2+KP_7 exec --no-startup-id ~/.config/i3/tp.sh tl
+bindsym $Mod+KP_Home          exec --no-startup-id ~/.config/i3/tp.sh tl
+bindsym $Mod+mod2+KP_7        exec --no-startup-id ~/.config/i3/tp.sh tl
 
-bindsym $Mod+KP_Page_Up exec --no-startup-id ~/.config/i3/tp.sh tr
-bindsym $Mod+mod2+KP_9 exec --no-startup-id ~/.config/i3/tp.sh tr
+bindsym $Mod+KP_Page_Up       exec --no-startup-id ~/.config/i3/tp.sh tr
+bindsym $Mod+mod2+KP_9        exec --no-startup-id ~/.config/i3/tp.sh tr
 
-bindsym $Mod+KP_Page_Down exec --no-startup-id ~/.config/i3/tp.sh br
-bindsym $Mod+mod2+KP_3 exec --no-startup-id ~/.config/i3/tp.sh br
+bindsym $Mod+KP_Page_Down     exec --no-startup-id ~/.config/i3/tp.sh br
+bindsym $Mod+mod2+KP_3        exec --no-startup-id ~/.config/i3/tp.sh br
 
-bindsym $Mod+KP_End exec --no-startup-id ~/.config/i3/tp.sh bl
-bindsym $Mod+mod2+KP_1 exec --no-startup-id ~/.config/i3/tp.sh bl
+bindsym $Mod+KP_End           exec --no-startup-id ~/.config/i3/tp.sh bl
+bindsym $Mod+mod2+KP_1        exec --no-startup-id ~/.config/i3/tp.sh bl
 
-bindsym $Mod+KP_Left exec --no-startup-id ~/.config/i3/tile.sh left
-bindsym $Mod+mod2+KP_4 exec --no-startup-id ~/.config/i3/tile.sh left
+bindsym $Mod+KP_Left          exec --no-startup-id ~/.config/i3/tile.sh left
+bindsym $Mod+mod2+KP_4        exec --no-startup-id ~/.config/i3/tile.sh left
 
-bindsym $Mod+KP_Right exec --no-startup-id ~/.config/i3/tile.sh right
-bindsym $Mod+mod2+KP_6 exec --no-startup-id ~/.config/i3/tile.sh right
+bindsym $Mod+KP_Right         exec --no-startup-id ~/.config/i3/tile.sh right
+bindsym $Mod+mod2+KP_6        exec --no-startup-id ~/.config/i3/tile.sh right
 
-bindsym $Mod+KP_Subtract exec --no-startup-id ~/.config/i3/scale.sh shrink
-bindsym $Mod+KP_Add exec --no-startup-id ~/.config/i3/scale.sh grow
+bindsym $Mod+KP_Subtract      exec --no-startup-id ~/.config/i3/scale.sh shrink
+bindsym $Mod+KP_Add           exec --no-startup-id ~/.config/i3/scale.sh grow
 
-bindsym $Mod+Control+KP_Left exec --no-startup-id ~/.config/i3/slice.sh hs
+bindsym $Mod+Control+KP_Left  exec --no-startup-id ~/.config/i3/slice.sh hs
 bindsym $Mod+Control+KP_Right exec --no-startup-id ~/.config/i3/slice.sh hg
-bindsym $Mod+Control+KP_Up exec --no-startup-id ~/.config/i3/slice.sh vg
-bindsym $Mod+Control+KP_Down exec --no-startup-id ~/.config/i3/slice.sh vs
+bindsym $Mod+Control+KP_Up    exec --no-startup-id ~/.config/i3/slice.sh vg
+bindsym $Mod+Control+KP_Down  exec --no-startup-id ~/.config/i3/slice.sh vs
 
 # Startup commands
-exec feh --bg-scale ~/Wallpapers/paperplane.png
+exec --no-startup-id feh --bg-scale ~/Wallpapers/paperplane.png
 exec --no-startup-id xrandr --output DP-2 --mode 1920x1080 --rate 300.18
-# exec --no-startup-id xwinwrap -g 1920x1080 -ni -s -nf -b -un -ov -fdt -argb -- mpv --mute=yes --no-audio --no-osc --no-osd-bar --quiet --screen=0 --geometry=1920x1080+0+0 -wid %WID --loop /home/tox/Videos/screensavers/train2.gif
-# exec --no-startup-id xbindkeys -p
-# exec --no-startup-id ollama serve
 
 # Exec always
 exec_always --no-startup-id autotiling
