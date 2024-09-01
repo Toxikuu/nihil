@@ -48,9 +48,11 @@ Extras include:
 - NightTab theme
 - Obsidian theme
 
-To install my userstyles, install the stylus extension in your browser. Click the extensions button, then open the stylus extension. Next, click manage, and import the userstyles-nihil.json from the extra folder in this repo.
+To use my userstyles, install the stylus extension in your browser. Click the extensions button, then open the stylus extension. Next, click manage, and import the userstyles-nihil.json from the extra folder in this repo.
 
-To install my NightTab, install the NightTab extension in your browser. Open a new tab, enter the NightTab settings and, under data, click import from file. Select nighttab-nihil.json from the extra folder in this repo.
+To use my NightTab config, install the NightTab extension in your browser. Open a new tab, enter the NightTab settings and, under data, click import from file. Select nighttab-nihil.json from the extra folder in this repo.
+
+To use my Sidebery config, install the Sidebery extension in your browser. Open the Sidebery settings and import the sidebery-nihil.json.
 
 To install my Obsidian theme, run the following command from the repo folder (assuming your Obsidian vault is ~/Vault):
 ```bash
