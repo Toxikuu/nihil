@@ -4,8 +4,9 @@ My dotfiles for LFS. Codenamed Nihil.
 ## Screenshots
 ![Music](https://github.com/toxikuu/nihil/blob/main/screenshots/1.png)
 ![Discord](https://github.com/toxikuu/nihil/blob/main/screenshots/2.png)
-![Neovim](https://github.com/toxikuu/nihil/blob/main/screenshots/3.png)
-![Browser](https://github.com/toxikuu/nihil/blob/main/screenshots/4.png)
+![Browser](https://github.com/toxikuu/nihil/blob/main/screenshots/3.png)
+![Steam](https://github.com/toxikuu/nihil/blob/main/screenshots/4.png)
+![Neovim](https://github.com/toxikuu/nihil/blob/main/screenshots/5.png)
 
 ## Install
 ### Dotfiles
