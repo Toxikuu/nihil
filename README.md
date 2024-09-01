@@ -7,6 +7,7 @@ My dotfiles for LFS. Codenamed Nihil.
 ![Browser](https://github.com/toxikuu/nihil/blob/main/screenshots/3.png)
 ![Steam](https://github.com/toxikuu/nihil/blob/main/screenshots/4.png)
 ![Neovim](https://github.com/toxikuu/nihil/blob/main/screenshots/5.png)
+![Obsidian and Zathura](https://github.com/toxikuu/nihil/blob/main/screenshots/6.png)
 
 ## Install
 ### Dotfiles
