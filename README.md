@@ -1,9 +1,6 @@
 # Nihil
 My dotfiles for LFS. Codenamed Nihil.
 
-## Video
-[![Showcase](https://img.youtube.com/vi/8nWzcVq5l3g/maxresdefault.jpg)](https://www.youtube.com/watch?v=8nWzcVq5l3g)
-
 ## Screenshots
 ![Music](https://github.com/toxikuu/nihil/blob/main/screenshots/1.png)
 ![Discord](https://github.com/toxikuu/nihil/blob/main/screenshots/2.png)
