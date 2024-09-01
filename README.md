@@ -61,7 +61,7 @@ I won't be sharing my Obsidian setup, but feel free to copy or take inspiration 
 Huge thanks to Alepheia and Zani for inspiring me to try LFS. Thank you to Zeckma for creating and helping me through the GLFS book. I'd also like to thank the maintainers of the LFS{,-multilib} and BLFS books for making this possible, as well as the AUR maintainers whose PKGBUILDs I referenced for TLFS. Also thank you to the members of the LFS Discord for being cool people :)
 
 ### Wallpapers 
-I got paintedgirl.png from wallhaven. As for flowers.png, I don't remember. I did some light color grading in Photopea of the original flowers.png.
+You can reverse image search to try to find the sources. I don't remember where I got most of them anyway.
 
 ### Fonts
 The only custom font used is [Iosevka Nerd Font](https://www.nerdfonts.com/font-downloads).
