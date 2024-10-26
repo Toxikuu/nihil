@@ -20,10 +20,10 @@ client.placeholder       $red        $base  $text  $secondary  $secondary
 client.background        $base
 
 # Hide title bars
-default_border               pixel 1
-default_floating_border      pixel 1
-for_window [floating] border pixel 1
-for_window [tiling]   border pixel 1
+default_border               pixel 2
+default_floating_border      pixel 2
+for_window [floating] border pixel 2
+for_window [tiling]   border pixel 2
 
 # Hide bar
 bar {
@@ -38,7 +38,8 @@ set $Alt Mod1
 
 # Screenshot Controls
 bindsym $Mod+Shift+s         exec --no-startup-id maim -s -u | xclip -selection clipboard -t image/png 
-bindsym $Mod+Home            exec --no-startup-id maim -u | xclip -selection clipboard -t image/png 
+bindsym $Mod+Shift+Home      exec --no-startup-id maim -u | xclip -selection clipboard -t image/png 
+bindsym $Mod+Home            exec --no-startup-id ~/.config/i3/ss.sh
 
 # Audio Controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
@@ -59,22 +60,22 @@ floating_modifier $Mod
 
 # Application Hotkeys
 bindsym $Mod+Return        exec alacritty
-bindsym $Mod+Shift+f       exec /sources/tlfs/floorp/floorp
-bindsym $Mod+Control+f     exec /sources/tlfs/floorp/floorp --ProfileManager
-bindsym $Mod+Shift+v       exec /sources/tlfs/vesktop-1.5.3/vesktop
-bindsym $Mod+Shift+m       exec "alacritty --class toxmus -e tm"
-bindsym $Mod+Control+m     exec "alacritty --class toxmus -e tm -p" 
+bindsym $Mod+Shift+f       exec floorp.sh --ProfileManager
+bindsym $Mod+Shift+v       exec vesktop.sh
+bindsym $Mod+Shift+m       exec "alacritty --class toxmus -e /code/tm3/run.sh"
+bindsym $Mod+Control+m     exec "alacritty --class toxmus -e /code/tm3/queue.sh" 
 bindsym $Mod+Shift+l       exec alacritty -e ollama run llama3:8b
 bindsym $Mod+Shift+b       exec alacritty -e btop
 bindsym $Mod+Shift+Return  exec alacritty
-bindsym $Mod+Shift+w       exec --no-startup-id ~/Projects/Code/bgm/bgm.sh
-bindsym $Mod+Shift+equal   exec --no-startup-id /sources/tlfs/Meth/meth.py
+bindsym $Mod+Shift+w       exec --no-startup-id /code/bgm/bgm.sh
+bindsym $Mod+Shift+equal   exec --no-startup-id meth
 
 # Toggle picom
 bindsym $Mod+$Alt+p        exec pkill picom || picom
 
 # Kill focused window
-bindsym $Mod+q kill
+bindsym $Mod+q             kill
+bindsym $Mod+Shift+q       exec alacritty -e xkill
 
 # Launch rofi
 bindsym $Mod+Shift+d       exec --no-startup-id rofi -show drun
@@ -172,8 +173,8 @@ bindsym $Mod+Shift+F9    move container to workspace $ws19
 bindsym $Mod+Shift+F10   move container to workspace $ws20
 
 # Enforce workspace organization
-for_window [class="floorp"]               move container to workspace $ws2
-for_window [class="vesktop"]              move container to workspace $ws1
+# for_window [class="floorp"]               move container to workspace $ws2
+for_window [class="vesktop"]              move container to workspace $ws6
 for_window [class="Spotify"]              move container to workspace $ws6
 for_window [class="steam"]                move container to workspace $ws4
 for_window [class="EverestSplash-linux"]  move container to workspace $ws7
@@ -181,6 +182,7 @@ for_window [class="Celeste"]              move container to workspace $ws7
 for_window [class="EtG.x86_64"]           move container to workspace $ws7
 for_window [class="dotnet"]               move container to workspace $ws7
 for_window [title="tmpv"]                 move container to workspace $ws6
+for_window [title="toxmus"]               move container to workspace $ws6
 
 # Reload the configuration file
 bindsym $Mod+$Alt+r           reload
@@ -199,6 +201,7 @@ bindsym $Mod+Control+Down     exec --no-startup-id ~/.config/i3/resize.sh down
 for_window [class="meth"]     floating enable
 for_window [class="mpv"]      floating enable
 for_window [class="toxmus"]   floating enable, resize set 666 225
+for_window [class="vesktop"]  floating enable, resize set 1080 540
 
 # 2bwm-inspired functionality
 bindsym $Mod+Tab              exec --no-startup-id ~/.config/i3/cycle.sh
@@ -232,9 +235,23 @@ bindsym $Mod+Control+KP_Right exec --no-startup-id ~/.config/i3/slice.sh hg
 bindsym $Mod+Control+KP_Up    exec --no-startup-id ~/.config/i3/slice.sh vg
 bindsym $Mod+Control+KP_Down  exec --no-startup-id ~/.config/i3/slice.sh vs
 
+bindsym $Mod+$Alt+Right        exec --no-startup-id ~/.config/i3/move.sh right
+bindsym $Mod+$Alt+Left         exec --no-startup-id ~/.config/i3/move.sh left
+
 # Startup commands
-exec --no-startup-id feh --bg-scale ~/Wallpapers/paperplane.png
-exec --no-startup-id xrandr --output DP-2 --mode 1920x1080 --rate 300.18
+exec --no-startup-id picom
+exec --no-startup-id xset r rate 250 25
+exec --no-startup-id xrandr --output DP-2   --mode 1920x1080 --rate 300.18
+exec --no-startup-id xrandr --output HDMI-0 --mode 1920x1080 --rate 74.97
+
+# Wallpapers
+# exec --no-startup-id feh --bg-scale ~/Wallpapers/paperplane.png
+exec --no-startup-id xwinwrap -g 1920x1080+0+0    -ni -s -nf -b -un -ov -fdt -argb -- mpv --mute=yes --no-audio --no-osc --no-osd-bar --quiet --screen=0 -wid WID --loop /home/t/Wallpapers/wheres981.mp4
+exec --no-startup-id xwinwrap -g 1920x1080+1920+0 -ni -s -nf -b -un -ov -fdt -argb -- mpv --mute=yes --no-audio --no-osc --no-osd-bar --quiet --screen=0 -wid WID --loop /home/t/Wallpapers/wheres981.mp4
 
 # Exec always
-exec_always --no-startup-id autotiling
+exec_always --no-startup-id autotiling.sh
+
+# Monitor config
+workspace 6 output HDMI-0
+workspace 0 output DP-2
