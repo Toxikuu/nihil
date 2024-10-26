@@ -1,12 +1,30 @@
 #!/bin/bash
 
-sw=$(xdotool getdisplaygeometry | awk '{print $1}')
-sh=$(xdotool getdisplaygeometry | awk '{print $2}')
+xgdg() {
+  xdotool getdisplaygeometry "$@"
+}
 
-ww=$(xdotool getwindowgeometry --shell $(xdotool getactivewindow) | grep WIDTH | cut -d= -f2)
-wh=$(xdotool getwindowgeometry --shell $(xdotool getactivewindow) | grep HEIGHT | cut -d= -f2)
+xgwg() {
+  xdotool getwindowgeometry "$@"
+}
 
-x=$(( (sw / 2) - (ww / 2) ))
+window=$(xdotool getactivewindow)
+sw=$(xgdg | awk '{print $1}')
+sh=$(xgdg | awk '{print $2}')
+
+ww=$(xgwg --shell $window | grep WIDTH  | cut -d= -f2)
+wh=$(xgwg --shell $window | grep HEIGHT | cut -d= -f2)
+
+wing=$(xgwg --shell $window)
+oldx=$(echo "$wing" | rg X | cut -d= -f2)
+echo $oldx
+oldy=$(echo "$wing" | rg Y | cut -d= -f2)
+
+if (( oldx < sw )); then
+  x=$(( (sw / 2) - (ww / 2) ))
+else
+  x=$(( sw + (sw / 2) - (ww / 2) ))
+fi
 y=$(( (sh / 2) - (wh / 2) ))
 
-xdotool getactivewindow windowmove $x $y
+xdotool windowmove $window $x $y
